@@ -42,5 +42,6 @@ elif [ "$SEVERITY" -ge 3 ]; then
 else
     PRIORITY=5
 fi
-# we output the user info as a string
-echo "$NAME,$AGE,$SEVERITY,$PRIORITY"
+# we output the user info as a string and then use piping to pass this to
+# admissions.c process.
+echo "$NAME,$AGE,$SEVERITY,$PRIORITY" | ./admissions
