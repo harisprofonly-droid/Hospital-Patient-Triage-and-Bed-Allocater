@@ -23,6 +23,9 @@ echo "=========================================="
 if [ ! -p triage_admissions_IPC_pipe ]; then
     mkfifo triage_admissions_IPC_pipe
 fi
+if [ ! -p discharge_fifo ]; then
+    mkfifo discharge_fifo
+fi
 # this line initializes the hospital 
 ./initialize_hospital &
 # this line runs admissions.c as a process in the background 
